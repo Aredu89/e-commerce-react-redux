@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { auth, createUserDocumentFromAuth, signInWithGooglePopup } from '../../firebase/firebase.utils';
+import {
+  createUserDocumentFromAuth,
+  signInWithGooglePopup,
+  signInAuthUserWithEmailAndPassword,
+} from '../../firebase/firebase.utils';
 import CustomButton from '../custom-button/custom-button.component';
 import FormInput from '../form-input/form-input.component';
 import './sign-in.styles.scss';
@@ -10,19 +14,25 @@ const SignIn = () => {
 
   const logGoogleUser = async () => {
     const { user } = await signInWithGooglePopup();
-    const userDocRef = await createUserDocumentFromAuth(user);
+    await createUserDocumentFromAuth(user);
   };
 
   const handleSubmit = async event => {
     event.preventDefault();
 
-    const { email, password } = this.state;
-
     try {
-      await auth.signInWithEmailAndPassword(email, password);
-      this.setState({ email: '', password: '' });
+      await signInAuthUserWithEmailAndPassword(email, password);
     } catch(error) {
-      console.log("Error signing in: ", error.message);
+      switch(error.code) {
+        case 'auth/wrong-password':
+          alert('Incorrecto password');
+          break;
+        case 'auth/user-not-found':
+          alert('User not found');
+          break;
+        default:
+          console.log('Error siging in', error.message);
+      }
     };
   };
 
