@@ -9,17 +9,20 @@ import { store, persistor } from './redux/store';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { UserProvider } from './context/user.context';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
   <Provider store={store}>
     <BrowserRouter>
-      <React.StrictMode>
-        <PersistGate persistor={persistor}>
-          <App />
-        </PersistGate>
-      </React.StrictMode>
+      <UserProvider>
+        <React.StrictMode>
+          <PersistGate persistor={persistor}>
+            <App />
+          </PersistGate>
+        </React.StrictMode>
+      </UserProvider>
     </BrowserRouter>
   </Provider>
 );
