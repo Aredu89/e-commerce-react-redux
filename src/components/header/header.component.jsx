@@ -11,11 +11,7 @@ import { UserContext } from '../../context/user.context';
 import './header.styles.scss';
 
 const Header = () => {
-  const { currentUser, setCurrentUser } = useContext(UserContext);
-  const signOutHandler = async () => {
-    await signOutUser();
-    setCurrentUser(null);
-  };
+  const { currentUser } = useContext(UserContext);
 
   return (
     <>
@@ -32,7 +28,7 @@ const Header = () => {
           </Link>
           {
             currentUser ? (
-              <div className='option' onClick={signOutHandler}>
+              <div className='option' onClick={signOutUser}>
                 SIGN OUT
               </div>
             ) : (
