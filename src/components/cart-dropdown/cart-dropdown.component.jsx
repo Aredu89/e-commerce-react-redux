@@ -6,7 +6,7 @@ import CartItem from '../cart-item/cart-item.component';
 import './cart-dropdown.styles.scss';
 import { useParams } from 'react-router-dom';
 
-const CartDropdown = ({ cartItems, dispatch }) => {
+const CartDropdown = ({ cartItems }) => {
   const { history } = useParams;
   return (
     <div className='cart-dropdown'>

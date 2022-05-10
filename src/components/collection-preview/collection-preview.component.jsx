@@ -2,7 +2,7 @@ import React from 'react';
 
 import './collection-preview.styles.scss';
 
-import CollectionItem from '../collection-item/collection-item.component';
+import ProductCard from '../product-card/product-card.component';
 
 const CollectionPreview = ({
   title,
@@ -15,7 +15,7 @@ const CollectionPreview = ({
         items
           .filter((item, idx) => idx < 4)
           .map((item)=>(
-            <CollectionItem key={item.id} item={item} />
+            <ProductCard key={item.id} item={item} />
           ))
       }
     </div>

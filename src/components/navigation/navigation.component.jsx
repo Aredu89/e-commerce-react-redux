@@ -1,17 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
 import { signOutUser } from '../../firebase/firebase.utils';
 import CartIcon from '../cart-icon/cart-icon.component';
-// import CartDropdown from '../cart-dropdown/cart-dropdown.component';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { UserContext } from '../../context/user.context';
 
-import './header.styles.scss';
+import './navigation.styles.scss';
 
-const Header = () => {
+const Navigation = () => {
   const { currentUser } = useContext(UserContext);
+  const [hidden, setHidden] = useState(true);
 
   return (
     <>
@@ -37,16 +38,16 @@ const Header = () => {
               </Link>
             )
           }
-          <CartIcon />
+          <CartIcon toggleCartHidden={() => setHidden(prevState => !prevState)} />
         </div>
-        {/* {
+        {
           hidden ? null :
-          <CartDropdown />
-        } */}
+          <CartDropdown cartItems={[]} />
+        }
       </div>
       <Outlet />
     </>
   )
 };
 
-export default Header;
+export default Navigation;

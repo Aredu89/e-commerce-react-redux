@@ -6,15 +6,18 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { UserProvider } from './context/user.context';
+import { ProductsProvider } from './context/products.context';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
   <BrowserRouter>
     <UserProvider>
-      <React.StrictMode>
-          <App />
-      </React.StrictMode>
+      <ProductsProvider>
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>
+      </ProductsProvider>
     </UserProvider>
   </BrowserRouter>
 );

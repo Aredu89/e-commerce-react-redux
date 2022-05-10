@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Header from './components/header/header.component';
+import Navigation from './components/navigation/navigation.component';
 import CheckoutPage from './pages/checkout/checkout.component';
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div>
       <Routes>
-        <Route path='/' element={<Header />}>
+        <Route path='/' element={<Navigation />}>
           <Route index element={<HomePage />} />
           <Route path='shop' element={<ShopPage />} />
           <Route path='checkout' element={<CheckoutPage />} />
