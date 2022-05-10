@@ -1,10 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
-
-import { store, persistor } from './redux/store';
 
 import './index.scss';
 import App from './App';
@@ -14,17 +10,13 @@ import { UserProvider } from './context/user.context';
 const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <UserProvider>
-        <React.StrictMode>
-          <PersistGate persistor={persistor}>
-            <App />
-          </PersistGate>
-        </React.StrictMode>
-      </UserProvider>
-    </BrowserRouter>
-  </Provider>
+  <BrowserRouter>
+    <UserProvider>
+      <React.StrictMode>
+          <App />
+      </React.StrictMode>
+    </UserProvider>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
