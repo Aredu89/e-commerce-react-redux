@@ -7,12 +7,13 @@ import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { UserContext } from '../../context/user.context';
+import { CartContext } from '../../context/cart.context';
 
 import './navigation.styles.scss';
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
-  const [hidden, setHidden] = useState(true);
+  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
 
   return (
     <>
@@ -38,12 +39,9 @@ const Navigation = () => {
               </Link>
             )
           }
-          <CartIcon toggleCartHidden={() => setHidden(prevState => !prevState)} />
+          <CartIcon toggleCartHidden={() => setIsCartOpen(!isCartOpen)} />
         </div>
-        {
-          hidden ? null :
-          <CartDropdown cartItems={[]} />
-        }
+        { isCartOpen && <CartDropdown /> }
       </div>
       <Outlet />
     </>

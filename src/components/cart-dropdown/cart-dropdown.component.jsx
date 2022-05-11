@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import CustomButton from '../custom-button/custom-button.component';
 import CartItem from '../cart-item/cart-item.component';
+import { CartContext } from '../../context/cart.context';
 
 import './cart-dropdown.styles.scss';
 import { useParams } from 'react-router-dom';
 
-const CartDropdown = ({ cartItems }) => {
+const CartDropdown = () => {
   const { history } = useParams;
+  const { cartItems } = useContext(CartContext);
   return (
     <div className='cart-dropdown'>
       <div className='cart-items'>
