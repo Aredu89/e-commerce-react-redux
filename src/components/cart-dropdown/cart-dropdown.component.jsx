@@ -1,15 +1,20 @@
 import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import CustomButton from '../custom-button/custom-button.component';
 import CartItem from '../cart-item/cart-item.component';
 import { CartContext } from '../../context/cart.context';
 
 import './cart-dropdown.styles.scss';
-import { useParams } from 'react-router-dom';
 
 const CartDropdown = () => {
-  const { history } = useParams;
+  const navigate = useNavigate();
   const { cartItems } = useContext(CartContext);
+
+  const goToCheckout = () => {
+    navigate('/checkout');
+  };
+
   return (
     <div className='cart-dropdown'>
       <div className='cart-items'>
@@ -22,9 +27,7 @@ const CartDropdown = () => {
           <span className='empty-message'>Your cart is empty</span>
           )}
       </div>
-      <CustomButton onClick={() => {
-        history.push('/checkout');
-      }}>GO TO CHECKOUT</CustomButton>
+      <CustomButton onClick={goToCheckout}>GO TO CHECKOUT</CustomButton>
     </div>
   )
 };
