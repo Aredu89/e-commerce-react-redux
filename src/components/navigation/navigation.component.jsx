@@ -9,7 +9,12 @@ import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { UserContext } from '../../context/user.context';
 import { CartContext } from '../../context/cart.context';
 
-import './navigation.styles.scss';
+import {
+  NavigationHeader,
+  LogoContainer,
+  NavigationOptions,
+  NavigationOption,
+} from './navigation.styles';
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
@@ -17,32 +22,32 @@ const Navigation = () => {
 
   return (
     <>
-      <div className='header'>
-        <Link className='logo-container' to='/'>
+      <NavigationHeader>
+        <LogoContainer to='/'>
           <Logo className='logo' />
-        </Link>
-        <div className='options'>
-          <Link className='option' to='/shop'>
+        </LogoContainer>
+        <NavigationOptions>
+          <NavigationOption to='/shop'>
             SHOP
-          </Link>
-          {/* <Link className='option' to='/contact'>
+          </NavigationOption>
+          {/* <NavigationOption className='option' to='/contact'>
             CONTACT
-          </Link> */}
+          </NavigationOption> */}
           {
             currentUser ? (
-              <div className='option' onClick={signOutUser}>
+              <NavigationOption as='span' onClick={signOutUser}>
                 SIGN OUT
-              </div>
+              </NavigationOption>
             ) : (
-              <Link className='option' to='/signin'>
+              <NavigationOption to='/signin'>
                 SIGN IN
-              </Link>
+              </NavigationOption>
             )
           }
           <CartIcon toggleCartHidden={() => setIsCartOpen(!isCartOpen)} />
-        </div>
+        </NavigationOptions>
         { isCartOpen && <CartDropdown /> }
-      </div>
+      </NavigationHeader>
       <Outlet />
     </>
   )

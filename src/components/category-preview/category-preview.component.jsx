@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './category-preview.styles.scss';
 
@@ -9,10 +9,9 @@ const CategoryPreview = ({
   title,
   products
 }) => {
-  const navigate = useNavigate();
   return (
     <div className='category-preview'>
-      <h1 className='title' onClick={() => navigate(title)}>{title.toUpperCase()}</h1>
+      <Link className='title' to={title}>{title.toUpperCase()}</Link>
       <div className='preview'>
         {
           products

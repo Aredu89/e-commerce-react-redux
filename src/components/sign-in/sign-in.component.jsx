@@ -3,7 +3,7 @@ import {
   signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword,
 } from '../../firebase/firebase.utils';
-import CustomButton from '../custom-button/custom-button.component';
+import CustomButton, { BUTTON_TYPE_CLASSES } from '../custom-button/custom-button.component';
 import FormInput from '../form-input/form-input.component';
 import './sign-in.styles.scss';
 
@@ -58,7 +58,11 @@ const SignIn = () => {
         />
         <div className='buttons'>
           <CustomButton type='submit' value='Submit Form'> Sign in </CustomButton>
-          <CustomButton type='button' onClick={logGoogleUser} isGoogleSignIn>
+          <CustomButton
+            type='button'
+            onClick={logGoogleUser}
+            buttonType={BUTTON_TYPE_CLASSES.google}
+          >
             {' '}
             SIGN IN WITH GOOGLE{' '}
           </CustomButton>
