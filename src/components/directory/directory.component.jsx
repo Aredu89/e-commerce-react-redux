@@ -2,17 +2,17 @@ import React from 'react';
 
 import MenuItem from '../menu-item/menu-item.component';
 
-import './directory.styles.scss';
+import {DirectoryMenuContainer} from './directory.styles.jsx';
 
 const Directory = ({ sections }) => {
   return (
-  <div className='directory-menu'>
+  <DirectoryMenuContainer>
     {
       sections.map(({id, ...section}) => (
         <MenuItem key={id} {...section} />
       ))
     }
-  </div>
+  </DirectoryMenuContainer>
 )};
 
 export default Directory;

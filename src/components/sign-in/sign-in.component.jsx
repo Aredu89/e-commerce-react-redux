@@ -5,7 +5,7 @@ import {
 } from '../../firebase/firebase.utils';
 import CustomButton, { BUTTON_TYPE_CLASSES } from '../custom-button/custom-button.component';
 import FormInput from '../form-input/form-input.component';
-import './sign-in.styles.scss';
+import {SignInContainer, Buttons} from './sign-in.styles.jsx';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -35,7 +35,7 @@ const SignIn = () => {
   };
 
   return(
-    <div className='sign-in'>
+    <SignInContainer>
       <h2>I already have an account</h2>
       <span>Sign in with your email and password</span>
 
@@ -56,7 +56,7 @@ const SignIn = () => {
           label='Password'
           required
         />
-        <div className='buttons'>
+        <Buttons>
           <CustomButton type='submit' value='Submit Form'> Sign in </CustomButton>
           <CustomButton
             type='button'
@@ -66,9 +66,9 @@ const SignIn = () => {
             {' '}
             SIGN IN WITH GOOGLE{' '}
           </CustomButton>
-        </div>
+        </Buttons>
       </form>
-    </div>
+    </SignInContainer>
   )
 }
 

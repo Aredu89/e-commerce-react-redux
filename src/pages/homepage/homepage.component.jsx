@@ -3,12 +3,12 @@ import React from 'react';
 import Directory from '../../components/directory/directory.component';
 import sections from './sections.data';
 
-import './homepage.styles.scss';
+import {HomepageContainer} from './homepage.styles.jsx';
 
 const HomePage = () => (
-  <div className='homepage'>
+  <HomepageContainer>
     <Directory sections={sections} />
-  </div>
+  </HomepageContainer>
 )
 
 export default HomePage;

@@ -5,7 +5,11 @@ import CustomButton from '../custom-button/custom-button.component';
 import CartItem from '../cart-item/cart-item.component';
 import { CartContext } from '../../context/cart.context';
 
-import './cart-dropdown.styles.scss';
+import {
+  CartDropdownContainer,
+  EmptyMessage,
+  CartItems,
+} from './cart-dropdown.styles.jsx';
 
 const CartDropdown = () => {
   const navigate = useNavigate();
@@ -16,19 +20,19 @@ const CartDropdown = () => {
   };
 
   return (
-    <div className='cart-dropdown'>
-      <div className='cart-items'>
+    <CartDropdownContainer>
+      <CartItems>
         {
           cartItems.length ? (
             cartItems.map(cartItem =>
               <CartItem key={cartItem.id} item={cartItem} />
             )
           ) : (
-          <span className='empty-message'>Your cart is empty</span>
+          <EmptyMessage>Your cart is empty</EmptyMessage>
           )}
-      </div>
+      </CartItems>
       <CustomButton onClick={goToCheckout}>GO TO CHECKOUT</CustomButton>
-    </div>
+    </CartDropdownContainer>
   )
 };
 

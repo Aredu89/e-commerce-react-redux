@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 import { signOutUser } from '../../firebase/firebase.utils';
 import CartIcon from '../cart-icon/cart-icon.component';
