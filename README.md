@@ -9,4 +9,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### The app is live in Netlify
 
-- (https://joyful-begonia-539bf6.netlify.app/)
+- https://joyful-begonia-539bf6.netlify.app/
