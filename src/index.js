@@ -6,7 +6,6 @@ import { store } from './store/store';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { UserProvider } from './context/user.context';
 import { CategoriesProvider } from './context/categories.context';
 import { CartProvider } from './context/cart.context';
 
@@ -15,15 +14,13 @@ const root = createRoot(container);
 root.render(
   <BrowserRouter>
     <Provider store={store}>
-      <UserProvider>
-        <CategoriesProvider>
-          <CartProvider>
-            <React.StrictMode>
-                <App />
-            </React.StrictMode>
-          </CartProvider>
-        </CategoriesProvider>
-      </UserProvider>
+      <CategoriesProvider>
+        <CartProvider>
+          <React.StrictMode>
+              <App />
+          </React.StrictMode>
+        </CartProvider>
+      </CategoriesProvider>
     </Provider>
   </BrowserRouter>
 );
