@@ -6,18 +6,15 @@ import { store } from './store/store';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { CartProvider } from './context/cart.context';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
   <BrowserRouter>
     <Provider store={store}>
-      <CartProvider>
-        <React.StrictMode>
-            <App />
-        </React.StrictMode>
-      </CartProvider>
+      <React.StrictMode>
+          <App />
+      </React.StrictMode>
     </Provider>
   </BrowserRouter>
 );

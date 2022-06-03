@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -6,8 +6,8 @@ import { signOutUser } from '../../firebase/firebase.utils';
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
+import { selectIsCartOpen } from '../../store/cart/cart.selectors';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
-import { CartContext } from '../../context/cart.context';
 import { selectCurrentUser } from '../../store/user/user.selectors';
 
 import {
@@ -19,7 +19,7 @@ import {
 
 const Navigation = () => {
   const currentUser = useSelector(selectCurrentUser);
-  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
+  const isCartOpen = useSelector(selectIsCartOpen);
 
   return (
     <>
@@ -31,9 +31,6 @@ const Navigation = () => {
           <NavigationOption to='/shop'>
             SHOP
           </NavigationOption>
-          {/* <NavigationOption className='option' to='/contact'>
-            CONTACT
-          </NavigationOption> */}
           {
             currentUser ? (
               <NavigationOption as='span' onClick={signOutUser}>
@@ -45,7 +42,7 @@ const Navigation = () => {
               </NavigationOption>
             )
           }
-          <CartIcon toggleCartHidden={() => setIsCartOpen(!isCartOpen)} />
+          <CartIcon />
         </NavigationOptions>
         { isCartOpen && <CartDropdown /> }
       </NavigationHeader>
