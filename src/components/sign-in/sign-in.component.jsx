@@ -1,25 +1,24 @@
 import React, { useState } from 'react';
-import {
-  signInWithGooglePopup,
-  signInAuthUserWithEmailAndPassword,
-} from '../../firebase/firebase.utils';
+import { useDispatch } from 'react-redux';
+import { googleSignInStart, emailSignInStart } from '../../store/user/user.action';
 import CustomButton, { BUTTON_TYPE_CLASSES } from '../custom-button/custom-button.component';
 import FormInput from '../form-input/form-input.component';
 import {SignInContainer, Buttons} from './sign-in.styles.jsx';
 
 const SignIn = () => {
+  const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const logGoogleUser = async () => {
-    await signInWithGooglePopup();
+  const logGoogleUser = () => {
+    dispatch(googleSignInStart());
   };
 
   const handleSubmit = async event => {
     event.preventDefault();
 
     try {
-      await signInAuthUserWithEmailAndPassword(email, password);
+      dispatch(emailSignInStart(email, password));
     } catch(error) {
       switch(error.code) {
         case 'auth/wrong-password':

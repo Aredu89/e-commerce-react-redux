@@ -1,14 +1,14 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { signOutUser } from '../../firebase/firebase.utils';
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
 import { selectIsCartOpen } from '../../store/cart/cart.selectors';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { selectCurrentUser } from '../../store/user/user.selectors';
+import { signOutStart } from '../../store/user/user.action';
 
 import {
   NavigationHeader,
@@ -18,8 +18,13 @@ import {
 } from './navigation.styles';
 
 const Navigation = () => {
+  const dispatch = useDispatch();
   const currentUser = useSelector(selectCurrentUser);
   const isCartOpen = useSelector(selectIsCartOpen);
+
+  const handleSignOut = () => {
+    dispatch(signOutStart());
+  };
 
   return (
     <>
@@ -33,7 +38,7 @@ const Navigation = () => {
           </NavigationOption>
           {
             currentUser ? (
-              <NavigationOption as='span' onClick={signOutUser}>
+              <NavigationOption as='span' onClick={handleSignOut}>
                 SIGN OUT
               </NavigationOption>
             ) : (
