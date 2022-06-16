@@ -34,10 +34,3 @@ export const Total = styled.div`
   margin-left: auto;
   font-size: 36px;
 `;
-
-export const TestWarning = styled.div`
-  text-align: center;
-  margin-top: 40px;
-  font-size: 24px;
-  color: red;
-`;

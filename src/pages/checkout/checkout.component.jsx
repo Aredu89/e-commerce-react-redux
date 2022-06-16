@@ -2,15 +2,14 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
-import StripeCheckoutButton from '../../components/stripe-button/strip-button.component';
 import { selectCartItems, selectCartTotal } from '../../store/cart/cart.selectors';
+import PaymentForm from '../../components/payment-form/payment-form.component';
 
 import {
   CheckoutPageContainer,
   CheckoutHeader,
   HeaderBlock,
   Total,
-  TestWarning,
 } from './checkout.styles.jsx';
 
 const CheckoutPage = () => {
@@ -41,12 +40,13 @@ const CheckoutPage = () => {
       <Total>
         <span>TOTAL: ${cartTotal}</span>
       </Total>
-      <TestWarning>
+      <PaymentForm />
+      {/* <TestWarning>
         *Please use the following test credit card for payments*
         <br />
         4242 4242 4242 4242 - Exp: 01/22 - CVV: 123
       </TestWarning>
-      <StripeCheckoutButton price={cartTotal} />
+      <StripeCheckoutButton price={cartTotal} /> */}
     </CheckoutPageContainer>
   )
 };

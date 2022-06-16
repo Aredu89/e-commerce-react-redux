@@ -54,3 +54,7 @@ export const removeProduct = (cartItems, productId) => {
   const newCartItems = (removeProductFromCart(cartItems, productId));
   return createAction(CART_ACTION_TYPES.SET_CART_ITEMS, newCartItems);
 };
+
+export const cleanCart = () => {
+  return createAction(CART_ACTION_TYPES.SET_CART_ITEMS, []);
+}
