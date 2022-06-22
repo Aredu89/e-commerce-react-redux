@@ -9,7 +9,8 @@ import { UserData } from '../../utils/firebase/firebase.utils';
 import { User } from 'firebase/auth';
 
 export type AdditionalDetails = {
-  title: string;
+  title?: string;
+  displayName?: string;
 };
 
 // --- Type section ---
@@ -80,7 +81,7 @@ export const emailSignInStart = withMatcher((email: string, password: string) =>
 );
 
 export const signInSuccess = withMatcher(
-  (userAuth: UserData): SignInSuccess =>
+  (userAuth: UserData & { id: string }): SignInSuccess =>
     createAction(USER_ACTION_TYPES.SIGN_IN_SUCCESS, userAuth),
 );
 
