@@ -1,4 +1,4 @@
-import { ButtonProps } from './custom-button.types.js';
+import { ButtonProps } from './custom-button.types.d';
 
 import {
   BaseButton,

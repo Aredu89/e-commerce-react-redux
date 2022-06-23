@@ -1,24 +1,22 @@
-import React from 'react';
-
 import {
   FormInputLabel,
   Input,
   Group,
-} from './form-input.styles.jsx';
+} from './form-input.styles';
+
+import { FormInputProps } from './form-input.types.d';
 
 const FormInput = ({
-  handleChange,
   label,
   ...otherProps
-}) => (
+}: FormInputProps) => (
   <Group>
     <Input
-      onChange={handleChange}
       {...otherProps}
     />
     {
       label ? (
-        <FormInputLabel shrink={otherProps.value.length}>
+        <FormInputLabel shrink={Boolean(otherProps?.value?.toString().length)}>
           { label }
         </FormInputLabel>
       ) : null

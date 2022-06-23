@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import { useState, FormEvent } from 'react';
 import { useDispatch } from 'react-redux';
+import { AuthError, AuthErrorCodes } from 'firebase/auth';
 import { googleSignInStart, emailSignInStart } from '../../store/user/user.action';
 import CustomButton, { BUTTON_TYPE_CLASSES } from '../custom-button/custom-button.component';
 import FormInput from '../form-input/form-input.component';
-import {SignInContainer, Buttons} from './sign-in.styles.jsx';
+import {SignInContainer, Buttons} from './sign-in.styles';
 
 const SignIn = () => {
   const dispatch = useDispatch();
@@ -14,21 +15,22 @@ const SignIn = () => {
     dispatch(googleSignInStart());
   };
 
-  const handleSubmit = async event => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     try {
       dispatch(emailSignInStart(email, password));
     } catch(error) {
-      switch(error.code) {
-        case 'auth/wrong-password':
+      const { code, message } = error as AuthError;
+      switch(code) {
+        case AuthErrorCodes.INVALID_PASSWORD:
           alert('Incorrect password');
           break;
-        case 'auth/user-not-found':
+        case AuthErrorCodes.USER_DELETED:
           alert('User not found');
           break;
         default:
-          console.log('Error siging in', error.message);
+          console.log('Error siging in', message);
       }
     };
   };
@@ -43,7 +45,7 @@ const SignIn = () => {
           name='email'
           type='email'
           value={email}
-          handleChange={(event) => setEmail(event.target.value)}
+          onChange={(event) => setEmail(event.target.value)}
           label='Email'
           required
         />
@@ -51,7 +53,7 @@ const SignIn = () => {
           name='password'
           type='password'
           value={password}
-          handleChange={(event) => setPassword(event.target.value)}
+          onChange={(event) => setPassword(event.target.value)}
           label='Password'
           required
         />
