@@ -1,3 +1,4 @@
+// Unused
 const SHOP_DATA = [
   {
     title: 'Hats',

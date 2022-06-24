@@ -1,12 +1,12 @@
-import React from 'react';
+import { CartItem } from '../../store/cart/cart.types.js';
 
 import {
   Name,
   ItemDetails,
   CartItemContainer,
-} from './cart-item.styles.jsx';
+} from './cart-item.styles';
 
-const CartItem = ({ item: { imageUrl, price, name, quantity }}) => (
+const CartItemComponent = ({ item: { imageUrl, price, name, quantity }}: { item: CartItem}) => (
   <CartItemContainer>
     <img src={imageUrl} alt='item' />
     <ItemDetails>
@@ -16,4 +16,4 @@ const CartItem = ({ item: { imageUrl, price, name, quantity }}) => (
   </CartItemContainer>
 );
 
-export default CartItem;
+export default CartItemComponent;

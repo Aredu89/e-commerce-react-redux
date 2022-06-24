@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { BackgroundImageProps, MenuItemContainer } from './menu-item.types';
 
-export const BackgroundImage = styled.div`
+export const BackgroundImage = styled.div<BackgroundImageProps>`
   width: 100%;
   height: 100%;
   background-position: center;
@@ -33,7 +34,7 @@ export const SubTitle = styled.span`
   font-size: 16px;
 `;
 
-export const MenuItemContiner = styled.div`
+export const MenuItemContiner = styled.div<MenuItemContainer>`
   min-width: 30%;
   height: ${({ size }) => size ? '380px' : '240px'};
   flex: 1 1 auto;

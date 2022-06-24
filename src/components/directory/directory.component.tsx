@@ -1,10 +1,10 @@
-import React from 'react';
+import { Section } from '../../pages/homepage/homepage.types';
 
 import MenuItem from '../menu-item/menu-item.component';
 
-import {DirectoryMenuContainer} from './directory.styles.jsx';
+import {DirectoryMenuContainer} from './directory.styles';
 
-const Directory = ({ sections }) => {
+const Directory = ({ sections }: { sections: Section[]}) => {
   return (
   <DirectoryMenuContainer>
     {

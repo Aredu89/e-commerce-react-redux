@@ -1,4 +1,3 @@
-import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import CustomButton, { BUTTON_TYPE_CLASSES } from '../custom-button/custom-button.component';
@@ -10,9 +9,10 @@ import {
   Footer,
   Name,
   Price,
-} from './product-card.styles.jsx';
+} from './product-card.styles';
+import { ProductCardProps } from './product-card.types';
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product }: ProductCardProps) => {
   const { name, price, imageUrl } = product;
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
