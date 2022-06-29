@@ -20,6 +20,7 @@ const CartDropdown = () => {
     () => {
       navigate('/checkout')
       //Navigate does not change, because useNavigate knows that in a rerender this is the same value.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
   return (
