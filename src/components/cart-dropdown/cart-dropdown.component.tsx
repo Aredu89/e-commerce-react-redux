@@ -1,10 +1,11 @@
 import { useCallback } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import CustomButton from '../custom-button/custom-button.component';
 import CartItem from '../cart-item/cart-item.component';
 import { selectCartItems } from '../../store/cart/cart.selectors';
+import { setIsCartOpen } from '../../store/cart/cart.actions';
 
 import {
   CartDropdownContainer,
@@ -13,12 +14,14 @@ import {
 } from './cart-dropdown.styles';
 
 const CartDropdown = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const cartItems = useSelector(selectCartItems);
 
   const goToCheckout = useCallback(
     () => {
-      navigate('/checkout')
+      navigate('/checkout');
+      dispatch(setIsCartOpen(false))
       //Navigate does not change, because useNavigate knows that in a rerender this is the same value.
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);

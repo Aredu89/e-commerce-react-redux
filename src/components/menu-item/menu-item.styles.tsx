@@ -9,6 +9,18 @@ export const BackgroundImage = styled.div<BackgroundImageProps>`
   background-image: ${({ imageUrl }) => `url(${imageUrl})`}
 `;
 
+export const Title = styled.h1`
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-size: 22px;
+  color: #4a4a4a;
+`;
+
+export const SubTitle = styled.span`
+  font-weight: lighter;
+  font-size: 16px;
+`;
+
 export const Content = styled.div`
   height: 90px;
   padding: 0 25px;
@@ -20,18 +32,18 @@ export const Content = styled.div`
   background-color: white;
   opacity: 0.7;
   position: absolute;
-`;
 
-export const Title = styled.h1`
-  font-weight: bold;
-  margin-bottom: 6px;
-  font-size: 22px;
-  color: #4a4a4a;
-`;
+  @media screen and (max-width: 800px) {
+    height: 60px;
+    padding: 0 15px;
 
-export const SubTitle = styled.span`
-  font-weight: lighter;
-  font-size: 16px;
+    ${Title} {
+      font-size: 16px;
+    }
+    ${SubTitle} {
+      font-size: 13px;
+    }
+  }
 `;
 
 export const MenuItemContiner = styled.div<MenuItemContainer>`
@@ -61,5 +73,9 @@ export const MenuItemContiner = styled.div<MenuItemContainer>`
   }
   &:last-child {
     margin-left: 7.5px;
+  }
+
+  @media screen and (max-width: 800px) {
+    height: 200px;
   }
 `;

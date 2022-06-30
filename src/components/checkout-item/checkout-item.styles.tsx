@@ -22,6 +22,10 @@ export const CheckoutItemContainer = styled.div`
   ${Price} {
     width: 23%;
   }
+
+  @media screen and (max-width: 800px) {
+    font-size: 16px;
+  }
 `;
 
 export const ImageContainer = styled.div`
