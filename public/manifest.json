@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "E-commerce React Redux app",
+  "name": "E-commerce app by Ariel Rosales",
   "icons": [
     {
       "src": "favicon.ico",
