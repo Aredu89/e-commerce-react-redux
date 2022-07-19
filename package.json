@@ -71,6 +71,9 @@
     ]
   },
   "devDependencies": {
-    "@types/redux-logger": "^3.0.9"
+    "@types/enzyme": "^3.10.12",
+    "@types/redux-logger": "^3.0.9",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6"
   }
 }
