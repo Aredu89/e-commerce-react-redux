@@ -1,4 +1,4 @@
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import CartItemComponent from './cart-item.component';
 
 describe('CartItem component', () => {
@@ -12,6 +12,7 @@ describe('CartItem component', () => {
     }
   };
   it('render properly', () => {
-    expect(shallow(<CartItemComponent {...props} />)).toMatchSnapshot();
+    const result = render(<CartItemComponent {...props} />);
+    expect(result).toMatchSnapshot();
   });
 });

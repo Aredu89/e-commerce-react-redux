@@ -1,5 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import MenuItem from './menu-item.component';
 
 const mockedNavigator = jest.fn();
@@ -17,10 +17,11 @@ describe('Manu-item component', () => {
     size: 'large'
   };
   it('renders properly', () => {
-    expect(shallow(
+    const result = render(
       <BrowserRouter>
         <MenuItem {...props} />
       </BrowserRouter>
-    )).toMatchSnapshot();
+    );
+    expect(result).toMatchSnapshot();
   })
 });

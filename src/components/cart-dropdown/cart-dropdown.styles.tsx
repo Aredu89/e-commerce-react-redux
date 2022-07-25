@@ -29,6 +29,8 @@ export const EmptyMessage = styled.span`
   margin: 50px auto;
 `;
 
+EmptyMessage.displayName = 'EmptyMessage';
+
 export const CartItems = styled.div`
   height: 240px;
   display: flex;

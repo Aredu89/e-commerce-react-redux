@@ -44,6 +44,7 @@ const SignIn = () => {
         <FormInput
           name='email'
           type='email'
+          data-testid='email-input'
           value={email}
           onChange={(event) => setEmail(event.target.value)}
           label='Email'
@@ -52,13 +53,20 @@ const SignIn = () => {
         <FormInput
           name='password'
           type='password'
+          data-testid='password-input'
           value={password}
           onChange={(event) => setPassword(event.target.value)}
           label='Password'
           required
         />
         <Buttons>
-          <CustomButton type='submit' value='Submit Form'> Sign in </CustomButton>
+          <CustomButton
+            type='submit'
+            value='Submit Form'
+            name='Submit Form'
+          >
+              Sign in
+          </CustomButton>
           <CustomButton
             type='button'
             onClick={logGoogleUser}

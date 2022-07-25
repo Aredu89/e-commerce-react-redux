@@ -6,7 +6,6 @@
     "@stripe/react-stripe-js": "^1.8.1",
     "@stripe/stripe-js": "^1.31.0",
     "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@types/jest": "^28.1.2",
     "@types/node": "^18.0.0",
@@ -71,9 +70,15 @@
     ]
   },
   "devDependencies": {
-    "@types/enzyme": "^3.10.12",
-    "@types/redux-logger": "^3.0.9",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.6"
+    "@testing-library/react": "^13.3.0",
+    "@types/redux-logger": "^3.0.9"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx,ts,tsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**",
+      "!**/__snapshots__/**"
+    ]
   }
 }
