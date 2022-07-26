@@ -1,31 +1,11 @@
-import { render, screen } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-
+import { screen } from '@testing-library/react';
 
 import CartDropdown from './cart-dropdown.component';
-import { rootReducer } from '../../store/root-reducer';
 import { CartItem } from '../../store/cart/cart.types';
-import { RootState } from '../../store/store';
+import { getWrapper, initialStore } from '../../utils/test/test.utils';
+import userEvent from '@testing-library/user-event';
 
 const mockedUseNavigate = jest.fn();
-
-let initialStore: RootState = {
-  user: {
-    currentUser: null,
-    isLoading: false,
-    error: null,
-  },
-  categories: {
-    categories: [],
-    isLoading: false,
-    error: null,
-  },
-  cart: {
-    isCartOpen: false,
-    cartItems: [],
-  }
-};
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -33,19 +13,12 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('Cart Dropdown', () => {
-  const getWrapper = () => {
-    const mockStore = createStore(rootReducer, initialStore);
-    return render(
-    <Provider store={mockStore}>
-      <CartDropdown />
-    </Provider>
-  )};
   it('renders empty cart', async () => {
-    getWrapper();
+    getWrapper(<CartDropdown />);
     expect(screen.getByText('Your cart is empty')).toBeInTheDocument();
   });
   it('has cart items', () => {
-    initialStore = {
+    const newStore = {
       ...initialStore,
       cart: {
         ...initialStore.cart,
@@ -58,8 +31,14 @@ describe('Cart Dropdown', () => {
         } as CartItem]
       }
     }
-    getWrapper();
+    getWrapper(<CartDropdown />, newStore);
     expect(screen.queryByText('Your cart is empty')).not.toBeInTheDocument();
     expect(screen.getByText('Item name')).toBeInTheDocument();
+  });
+  it('navigates to checkout', () => {
+    getWrapper(<CartDropdown />);
+    const button = screen.getByText('GO TO CHECKOUT');
+    userEvent.click(button);
+    expect(mockedUseNavigate).toHaveBeenCalledWith('/checkout');
   });
 });

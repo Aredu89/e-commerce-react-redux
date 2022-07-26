@@ -19,7 +19,7 @@ const CartIcon = () => {
   };
 
   return (
-    <CartIconContainer onClick={handleToggleCartOpen}>
+    <CartIconContainer data-testid='cart-icon-container' onClick={handleToggleCartOpen}>
       <ShoppingIcon />
       <ItemCount> { cartCount } </ItemCount>
     </CartIconContainer>
