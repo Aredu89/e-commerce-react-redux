@@ -1,5 +1,6 @@
-import { BrowserRouter } from 'react-router-dom';
-import { render } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { renderWithStoreAndRouter } from '../../utils/test/test.utils';
 import MenuItem from './menu-item.component';
 
 const mockedNavigator = jest.fn();
@@ -17,11 +18,13 @@ describe('Manu-item component', () => {
     size: 'large'
   };
   it('renders properly', () => {
-    const result = render(
-      <BrowserRouter>
-        <MenuItem {...props} />
-      </BrowserRouter>
-    );
+    const result = renderWithStoreAndRouter(<MenuItem {...props} />);
     expect(result).toMatchSnapshot();
-  })
+  });
+  it('navigates to link url', () => {
+    renderWithStoreAndRouter(<MenuItem {...props} />);
+    const childEl = screen.getByText('TITLE');
+    userEvent.click(childEl);
+    expect(mockedNavigator).toHaveBeenCalledWith(props.linkUrl);
+  });
 });

@@ -1,6 +1,7 @@
 import { Provider } from 'react-redux';
 import { render } from '@testing-library/react';
 import { createStore } from 'redux';
+import { BrowserRouter } from 'react-router-dom';
 
 import { rootReducer } from '../../store/root-reducer';
 import { RootState } from '../../store/store';
@@ -22,9 +23,11 @@ export const initialStore: RootState = {
   }
 };
 
-export const getWrapper = (children: JSX.Element, store = initialStore) => {
+export const renderWithStoreAndRouter = (children: JSX.Element, store = initialStore) => {
   const mockStore = createStore(rootReducer, store);
   return render(
-    <Provider store={mockStore}>{children}</Provider>
+    <BrowserRouter>
+      <Provider store={mockStore}>{children}</Provider>
+    </BrowserRouter>
   );
 };

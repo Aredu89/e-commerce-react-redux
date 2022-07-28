@@ -1,55 +1,95 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CartItem component renders properly 1`] = `
+exports[`Category preview renders properly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div
-        class="sc-dkzDqf itnFuj"
+        class="sc-bczRLJ feYkiB"
       >
-        <img
-          alt="item"
-          src="image/url"
-        />
-        <div
-          class="sc-gsnTZi cTyJxh"
+        <a
+          class="sc-gsnTZi cVjYOm"
+          href="/Title"
         >
-          <span
-            class="sc-bczRLJ kVgVOr"
+          TITLE
+        </a>
+        <div
+          class="sc-dkzDqf dXpcTy"
+        >
+          <div
+            class="sc-jqUVSM bJZKRg"
           >
-            name
-          </span>
-          <span>
-            1
-             x $
-            100
-          </span>
+            <img
+              alt="Item name"
+              src="image/url"
+            />
+            <div
+              class="sc-papXJ eDnHsY"
+            >
+              <span
+                class="sc-kDDrLX gaInqx"
+              >
+                Item name
+              </span>
+              <span
+                class="sc-iqcoie edOgOJ"
+              >
+                $
+                100
+              </span>
+            </div>
+            <button
+              class="sc-jSMfEi sc-iBkjds ctEdUo fLgvBh"
+            >
+              ADD TO CART
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="sc-dkzDqf itnFuj"
+      class="sc-bczRLJ feYkiB"
     >
-      <img
-        alt="item"
-        src="image/url"
-      />
-      <div
-        class="sc-gsnTZi cTyJxh"
+      <a
+        class="sc-gsnTZi cVjYOm"
+        href="/Title"
       >
-        <span
-          class="sc-bczRLJ kVgVOr"
+        TITLE
+      </a>
+      <div
+        class="sc-dkzDqf dXpcTy"
+      >
+        <div
+          class="sc-jqUVSM bJZKRg"
         >
-          name
-        </span>
-        <span>
-          1
-           x $
-          100
-        </span>
+          <img
+            alt="Item name"
+            src="image/url"
+          />
+          <div
+            class="sc-papXJ eDnHsY"
+          >
+            <span
+              class="sc-kDDrLX gaInqx"
+            >
+              Item name
+            </span>
+            <span
+              class="sc-iqcoie edOgOJ"
+            >
+              $
+              100
+            </span>
+          </div>
+          <button
+            class="sc-jSMfEi sc-iBkjds ctEdUo fLgvBh"
+          >
+            ADD TO CART
+          </button>
+        </div>
       </div>
     </div>
   </div>,

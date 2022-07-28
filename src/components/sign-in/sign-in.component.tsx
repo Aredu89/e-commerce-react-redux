@@ -2,7 +2,8 @@ import { useState, FormEvent } from 'react';
 import { useDispatch } from 'react-redux';
 import { AuthError, AuthErrorCodes } from 'firebase/auth';
 import { googleSignInStart, emailSignInStart } from '../../store/user/user.action';
-import CustomButton, { BUTTON_TYPE_CLASSES } from '../custom-button/custom-button.component';
+import CustomButton from '../custom-button/custom-button.component';
+import { BUTTON_TYPE_CLASSES } from '../custom-button/custom-button.types';
 import FormInput from '../form-input/form-input.component';
 import {SignInContainer, Buttons} from './sign-in.styles';
 

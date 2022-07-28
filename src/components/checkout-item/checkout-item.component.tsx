@@ -25,8 +25,8 @@ const CheckoutItem = memo(({ cartItem }: { cartItem: CartItem}) => {
   const { name, imageUrl, price, quantity } = cartItem;
   const cartItems = useSelector(selectCartItems);
 
-  const increaseQuantity = () => dispatch(addItemToCart(cartItems, cartItem));
   const removeItemFromCart = () => dispatch(removeItem(cartItems, cartItem));
+  const increaseQuantity = () => dispatch(addItemToCart(cartItems, cartItem));
   const removeProductFromCart = () => dispatch(removeProduct(cartItems, cartItem.id));
 
   return (

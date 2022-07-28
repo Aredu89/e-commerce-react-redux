@@ -6,7 +6,7 @@ import { selectCartTotal } from '../../store/cart/cart.selectors';
 import { selectCurrentUser } from '../../store/user/user.selectors';
 import { cleanCart } from '../../store/cart/cart.actions';
 
-import { BUTTON_TYPE_CLASSES } from '../custom-button/custom-button.component';
+import { BUTTON_TYPE_CLASSES } from '../custom-button/custom-button.types';
 import {
   PaymentFormContainer,
   FormContainer,

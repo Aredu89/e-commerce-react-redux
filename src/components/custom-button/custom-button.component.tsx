@@ -1,4 +1,4 @@
-import { ButtonProps } from './custom-button.types.d';
+import { ButtonProps, BUTTON_TYPE_CLASSES } from './custom-button.types';
 
 import {
   BaseButton,
@@ -6,12 +6,6 @@ import {
   InvertedButton,
   ButtonSpinner,
 } from './custom-button.styles';
-
-export enum BUTTON_TYPE_CLASSES {
-  base = 'base',
-  google = 'google-sign-in',
-  inverted = 'inverted',
-};
 
 const getButton = (buttonType = BUTTON_TYPE_CLASSES.base): typeof BaseButton => (
   {
@@ -28,7 +22,10 @@ const CustomButton = ({
   ...otherProps 
 }: ButtonProps) => {
   const CustomButton = getButton(buttonType);
-  return <CustomButton disabled={isLoading} {...otherProps}>
+  return <CustomButton
+    disabled={isLoading}
+    {...otherProps}
+    >
     { isLoading ? <ButtonSpinner /> : children }
   </CustomButton>
 };

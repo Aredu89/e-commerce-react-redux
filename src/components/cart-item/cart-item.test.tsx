@@ -11,7 +11,7 @@ describe('CartItem component', () => {
       quantity: 1
     }
   };
-  it('render properly', () => {
+  it('renders properly', () => {
     const result = render(<CartItemComponent {...props} />);
     expect(result).toMatchSnapshot();
   });

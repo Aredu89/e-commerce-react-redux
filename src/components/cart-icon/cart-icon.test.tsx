@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { getWrapper, initialStore } from '../../utils/test/test.utils';
+import { renderWithStoreAndRouter, initialStore } from '../../utils/test/test.utils';
 
 import CartIcon from './cart-icon.component';
 import { setIsCartOpen } from '../../store/cart/cart.actions';
@@ -14,7 +14,7 @@ jest.mock('react-redux', () => ({
 
 describe('Cart Icon', () => {
   it('shows count 0', () => {
-    getWrapper(<CartIcon />);
+    renderWithStoreAndRouter(<CartIcon />);
     expect(screen.getByText('0')).toBeInTheDocument();
   });
   it('shows count 2', () => {
@@ -40,11 +40,11 @@ describe('Cart Icon', () => {
         ]
       }
     };
-    getWrapper(<CartIcon />, newStore);
+    renderWithStoreAndRouter(<CartIcon />, newStore);
     expect(screen.getByText('3')).toBeInTheDocument();
   });
   it('opens cart', () => {
-    getWrapper(<CartIcon />);
+    renderWithStoreAndRouter(<CartIcon />);
     const button = screen.getByTestId('cart-icon-container');
     userEvent.click(button);
     expect(mockUseDispatch).toHaveBeenCalledWith(setIsCartOpen(true));
