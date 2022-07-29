@@ -1,0 +1,236 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sign-in component renders properly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="sc-papXJ hGtMkz"
+      >
+        <h2>
+          I do not have an account
+        </h2>
+        <span>
+          Sign up with your email and password
+        </span>
+        <form
+          class="sign-up-form"
+        >
+          <div
+            class="sc-ftvSup cduAcl"
+          >
+            <input
+              class="sc-iBkjds eZAXkO"
+              name="displayName"
+              required=""
+              type="text"
+              value=""
+            />
+            <label
+              class="sc-gKXOVf gjofEz"
+            >
+              Display Name
+            </label>
+          </div>
+          <div
+            class="sc-ftvSup cduAcl"
+          >
+            <input
+              class="sc-iBkjds eZAXkO"
+              data-testid="email-input"
+              name="email"
+              required=""
+              type="email"
+              value=""
+            />
+            <label
+              class="sc-gKXOVf gjofEz"
+            >
+              Email
+            </label>
+          </div>
+          <div
+            class="sc-ftvSup cduAcl"
+          >
+            <input
+              class="sc-iBkjds eZAXkO"
+              data-testid="password-input"
+              name="password"
+              required=""
+              type="password"
+              value=""
+            />
+            <label
+              class="sc-gKXOVf gjofEz"
+            >
+              Password
+            </label>
+          </div>
+          <div
+            class="sc-ftvSup cduAcl"
+          >
+            <input
+              class="sc-iBkjds eZAXkO"
+              name="confirmPassword"
+              required=""
+              type="password"
+              value=""
+            />
+            <label
+              class="sc-gKXOVf gjofEz"
+            >
+              Confirm Password
+            </label>
+          </div>
+          <button
+            class="sc-dkzDqf hdlUww"
+            type="submit"
+          >
+            SIGN UP
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="sc-papXJ hGtMkz"
+    >
+      <h2>
+        I do not have an account
+      </h2>
+      <span>
+        Sign up with your email and password
+      </span>
+      <form
+        class="sign-up-form"
+      >
+        <div
+          class="sc-ftvSup cduAcl"
+        >
+          <input
+            class="sc-iBkjds eZAXkO"
+            name="displayName"
+            required=""
+            type="text"
+            value=""
+          />
+          <label
+            class="sc-gKXOVf gjofEz"
+          >
+            Display Name
+          </label>
+        </div>
+        <div
+          class="sc-ftvSup cduAcl"
+        >
+          <input
+            class="sc-iBkjds eZAXkO"
+            data-testid="email-input"
+            name="email"
+            required=""
+            type="email"
+            value=""
+          />
+          <label
+            class="sc-gKXOVf gjofEz"
+          >
+            Email
+          </label>
+        </div>
+        <div
+          class="sc-ftvSup cduAcl"
+        >
+          <input
+            class="sc-iBkjds eZAXkO"
+            data-testid="password-input"
+            name="password"
+            required=""
+            type="password"
+            value=""
+          />
+          <label
+            class="sc-gKXOVf gjofEz"
+          >
+            Password
+          </label>
+        </div>
+        <div
+          class="sc-ftvSup cduAcl"
+        >
+          <input
+            class="sc-iBkjds eZAXkO"
+            name="confirmPassword"
+            required=""
+            type="password"
+            value=""
+          />
+          <label
+            class="sc-gKXOVf gjofEz"
+          >
+            Confirm Password
+          </label>
+        </div>
+        <button
+          class="sc-dkzDqf hdlUww"
+          type="submit"
+        >
+          SIGN UP
+        </button>
+      </form>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

@@ -5,10 +5,6 @@ export type MenuItemProps = {
   size?: string;
 };
 
-export type BackgroundImageProps = {
-  imageUrl: string;
-};
-
 export type MenuItemContainer = {
   size?: string;
 };

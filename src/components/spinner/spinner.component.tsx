@@ -5,7 +5,7 @@ import {
 
 const Spinner = () => (
   <SpinnerOverlay>
-    <SpinnerContainer />
+    <SpinnerContainer data-testid='spinner' />
   </SpinnerOverlay>
 );
 

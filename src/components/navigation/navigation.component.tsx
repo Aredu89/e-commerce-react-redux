@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import CartIcon from '../cart-icon/cart-icon.component';
@@ -18,6 +18,7 @@ import {
 
 const Navigation = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const currentUser = useSelector(selectCurrentUser);
   const isCartOpen = useSelector(selectIsCartOpen);
 
@@ -28,11 +29,11 @@ const Navigation = () => {
   return (
     <>
       <NavigationHeader>
-        <LogoContainer to='/'>
-          <Logo className='logo' />
+        <LogoContainer onClick={() => navigate('/')}>
+          <Logo />
         </LogoContainer>
         <NavigationOptions>
-          <NavigationOption to='/shop'>
+          <NavigationOption onClick={() => navigate('/shop')}>
             SHOP
           </NavigationOption>
           {
@@ -41,7 +42,7 @@ const Navigation = () => {
                 SIGN OUT
               </NavigationOption>
             ) : (
-              <NavigationOption to='/signin'>
+              <NavigationOption as='span' onClick={() => navigate('/signin')}>
                 SIGN IN
               </NavigationOption>
             )

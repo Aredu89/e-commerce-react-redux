@@ -60,6 +60,7 @@ const SignUp = () => {
         <FormInput
           type='email'
           name='email'
+          data-testid='email-input'
           value={email}
           onChange={handleChange}
           label='Email'
@@ -68,6 +69,7 @@ const SignUp = () => {
         <FormInput
           type='password'
           name='password'
+          data-testid='password-input'
           value={password}
           onChange={handleChange}
           label='Password'

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const NavigationHeader = styled.div`
   height: 70px;
@@ -16,7 +15,7 @@ export const NavigationHeader = styled.div`
   }
 `;
 
-export const LogoContainer = styled(Link)`
+export const LogoContainer = styled.span`
   height: 100%;
   width: 70px;
   display: flex;
@@ -25,6 +24,10 @@ export const LogoContainer = styled(Link)`
   @media screen and (max-width: 800px) {
     width: 50px;
     padding: 0px;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 `;
 
@@ -40,7 +43,7 @@ export const NavigationOptions = styled.div`
   }
 `;
 
-export const NavigationOption = styled(Link)`
+export const NavigationOption = styled.span`
   padding: 10px 15px;
   &:hover {
     cursor: pointer;

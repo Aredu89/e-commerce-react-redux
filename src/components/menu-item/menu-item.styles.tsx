@@ -1,12 +1,10 @@
 import styled from 'styled-components';
-import { BackgroundImageProps, MenuItemContainer } from './menu-item.types';
+import { MenuItemContainer } from './menu-item.types';
 
-export const BackgroundImage = styled.div<BackgroundImageProps>`
+export const BackgroundImage = styled.img`
   width: 100%;
   height: 100%;
-  background-position: center;
-  background-size: cover;
-  background-image: ${({ imageUrl }) => `url(${imageUrl})`}
+  object-fit: cover;
 `;
 
 export const Title = styled.h1`
@@ -49,6 +47,7 @@ export const Content = styled.div`
 export const MenuItemContiner = styled.div<MenuItemContainer>`
   min-width: 30%;
   height: ${({ size }) => size ? '380px' : '240px'};
+  grid-column: ${({ size }) => size ? 'span 3' : 'span 2'};
   flex: 1 1 auto;
   display: flex;
   align-items: center;
@@ -77,5 +76,6 @@ export const MenuItemContiner = styled.div<MenuItemContainer>`
 
   @media screen and (max-width: 800px) {
     height: 200px;
+    grid-column: span 6;
   }
 `;

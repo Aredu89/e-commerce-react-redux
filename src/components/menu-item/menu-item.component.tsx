@@ -20,7 +20,8 @@ const MenuItem = ({
   return (
     <MenuItemContiner onClick={()=> navigate(`${linkUrl}`)} size={size}>
       <BackgroundImage
-        imageUrl={imageUrl}
+        src={imageUrl}
+        alt='Category image'
       />
       <Content>
         <Title>{ title.toUpperCase() }</Title>
