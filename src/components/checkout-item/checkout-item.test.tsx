@@ -1,4 +1,4 @@
-import { screen, waitFor } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { RootState } from '../../store/store';
 import { renderWithStoreAndRouter, initialStore } from '../../utils/test/test.utils';
